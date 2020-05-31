@@ -53,7 +53,7 @@
                 <ul>
                 @foreach(var it in Model.Products)
                 {
-                    @if(it.ProductCategory == item)
+                    @if(it.ProductCategoryId == item.Id)
                     {
                         <li>@it.Name</li>
                     }

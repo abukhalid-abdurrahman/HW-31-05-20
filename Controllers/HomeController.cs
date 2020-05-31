@@ -13,10 +13,72 @@ namespace Solution.Controllers
     {
         DataContext dbContext;
         public HomeController(DataContext context){ dbContext = context; }
-
         public IActionResult Index()
         {
             return View(dbContext);
+        }
+        [HttpGet]
+        public IActionResult Buy()
+        {
+            return View(dbContext);
+        }
+        [HttpGet]
+        [Route("~/Home/Buy/{id}")]
+        public IActionResult Buy(int? id)
+        {
+            if(id != null)
+            {
+                var selectedProduct = dbContext.Products.Find(id);
+                if(selectedProduct != null)
+                {
+                    Basket basket = new Basket();
+                    basket.ProductState = 0;
+                    basket.SelectedProductID = selectedProduct.Id;
+                    dbContext.Baskets.Add(basket);
+                    dbContext.SaveChanges();
+                    return View(dbContext);
+                }
+                else
+                    return NotFound();
+            }
+            else
+                return BadRequest();
+        }
+        public IActionResult Order(int? id)
+        {
+            if(id != null)
+            {
+                var selectedProduct = dbContext.Products.Find(id);
+                if(selectedProduct != null)
+                    return View(selectedProduct);
+                else
+                    return NotFound();
+            }
+            else
+                return BadRequest();
+        }
+        [HttpPost]
+        public IActionResult Order(Order order)
+        {
+            if(order != null)
+            {
+                dbContext.Baskets.Find(order.SelectedProductId).ProductState = 1;
+                Solution.Order newOrder = new Solution.Order();
+                newOrder.Address = order.Address;
+                newOrder.Cost = order.Cost;
+                newOrder.PhoneNumber = order.PhoneNumber;
+                newOrder.SelectedProductId = order.SelectedProductId;
+                newOrder.TimeToGet = order.TimeToGet;
+                dbContext.Orders.Add(newOrder);
+                dbContext.SaveChanges();
+                return Redirect("~/Home/Thanks");
+            }
+            else
+                return BadRequest();
+        }
+        public IActionResult Thanks()
+        {
+            return View();
         }
 
         public IActionResult Login()
@@ -72,7 +134,7 @@ namespace Solution.Controllers
             if(product != null)
             {
                 var selectedCategory = dbContext.Categorys.Find(categoryId);
-                product.ProductCategory = selectedCategory;
+                product.ProductCategoryId = selectedCategory.Id;
                 dbContext.Products.Add(product);
                 dbContext.SaveChanges();
             }
@@ -88,12 +150,15 @@ namespace Solution.Controllers
             if(product != null)
             {
                 var selectedCategory = dbContext.Categorys.Find(categoryId);
-                var productEdited = dbContext.Products.Find(product.Id);
-                productEdited.Name = product.Name;
-                productEdited.Description = product.Description;
-                productEdited.ProductCategory = selectedCategory;
-                productEdited.Cost = product.Cost;
-                dbContext.SaveChanges();
+                if(selectedCategory != null)
+                {
+                    var productEdited = dbContext.Products.Find(product.Id);
+                    productEdited.Name = product.Name;
+                    productEdited.Description = product.Description;
+                    productEdited.ProductCategoryId = selectedCategory.Id;
+                    productEdited.Cost = product.Cost;
+                    dbContext.SaveChanges();
+                }
             }
             return View(dbContext);
         }

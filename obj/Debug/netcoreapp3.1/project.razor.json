@@ -20521,6 +20521,11 @@
   "RootNamespace": "Solution",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Home\\Thanks.cshtml",
+      "TargetPath": "Views\\Home\\Thanks.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20553,11 @@
     {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Home\\Order.cshtml",
+      "TargetPath": "Views\\Home\\Order.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20583,6 +20593,11 @@
     {
       "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Faridun\\Allif Academy\\Day 29\\Views\\Home\\Buy.cshtml",
+      "TargetPath": "Views\\Home\\Buy.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -41,7 +41,7 @@ namespace Solution
                         context.Superusers.Add(new Superuser { Name = "admin-root", Password = "root01" });
                         context.SaveChanges();
                     }
-                    context.Database.Migrate();
+                    //ontext.Database.Migrate();
                 }
                 catch (Exception ex)
                 {

@@ -1,0 +1,45 @@
+@model DataContext
+@{
+    ViewData["Title"] = "Корзина";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Ваша Корзина</h1>
+    <p>Список продуктов которые вы хотите приобрести.</p>
+</div>
+<div class="product-list">
+    <div class="card-columns">
+        @if(Model.Baskets.Count() > 0)
+        {
+            @foreach (var item in Model.Baskets)
+            {
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.Products.Find(item.SelectedProductID).Name - @Model.Categorys.Find(Model.Products.Find(item.SelectedProductID).ProductCategoryId).Name</h5>
+                            <p class="card-text">@Model.Products.Find(item.SelectedProductID).Description</p>
+                        </div>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                <cite title="Source Title">Цена: @Model.Products.Find(item.SelectedProductID).Cost</cite>
+                            </small>
+                        </footer>
+                            @if(item.ProductState == 1)
+                            {
+                                <a href="~/Home/Order/@item.SelectedProductID" class="btn btn-primary">Приобрести повторно</a>
+                            }
+                            else if(item.ProductState == 0)
+                            {
+                                <a href="~/Home/Order/@item.SelectedProductID" class="btn btn-primary">Оплатить</a>
+                            }
+                    </blockquote>
+                </div>
+            }
+        }
+        else {
+            <div class="text-center">
+                <p>Корзина пуста :( <a href="~/Home/Index">Пополнить карзину</a></p>
+            </div>
+        }
+    </div>
+</div>

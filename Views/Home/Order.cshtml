@@ -1,0 +1,19 @@
+@model Product
+@{
+    ViewData["Title"] = "Оформление заявки на заказ покупки";
+}
+<div class="text-center">
+    <p>Продукт: @Model.Name, цена: @Model.Cost</p>
+</div>
+<hr>
+<div class="container">
+    <form class="form-inline my-2 my-lg-0" method="POST">
+        <input type="hidden" value="@Model.Id" name="SelectedProductId">
+        <input type="hidden" value="@Model.Cost" name="Cost">
+        <input class="form-control mr-sm-2" type="text" placeholder="Адрес" name="Address">
+        <input class="form-control mr-sm-2" type="number" placeholder="Телефон" name="PhoneNumber">
+        <input class="form-control mr-sm-2" type="text" placeholder="Предпочетаемое время доставки" name="TimeToGet">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Заказать</button>
+    </form>   
+</div>
+

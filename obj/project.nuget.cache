@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ck8b0/tArdOFqi3a/NDlhEzJSg7Dc4W9jnvMoPl3ir1K/9fp3/At5+jg7vR0L6qZwLDtwtfVXMXg8MW3x9Nrdg==",
+  "dgSpecHash": "G3gRkrlP1clgPJluMTVLeLaWXy6wkR+CZUYeussQzyUoIoWCw/WIpwQeqRX8mWjgnNmOdNX3ZQvZh19z3pwdbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Solution.csproj",
+  "projectFilePath": "C:\\Users\\Faridun\\Allif Academy\\Day 29\\Solution.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Faridun\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Faridun\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

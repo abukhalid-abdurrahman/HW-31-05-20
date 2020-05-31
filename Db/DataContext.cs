@@ -8,5 +8,7 @@ namespace Solution
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Superuser> Superusers { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

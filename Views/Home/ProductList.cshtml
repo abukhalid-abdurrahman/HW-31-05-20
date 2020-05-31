@@ -48,7 +48,7 @@
                     <div class="card p-3">
                         <blockquote class="blockquote mb-0 card-body">
                             <div class="card-body">
-                                <h5 class="card-title">@item.Name - @item.ProductCategory</h5>
+                                <h5 class="card-title">@item.Name - @Model.Categorys.Find(@item.ProductCategoryId).Name</h5>
                                 <p class="card-text">@item.Description</p>
                             </div>
                             <footer class="blockquote-footer">
@@ -56,7 +56,6 @@
                                     <cite title="Source Title">Цена: @item.Cost</cite>
                                 </small>
                             </footer>
-                            <a href="#" class="btn btn-primary">Купить</a>
                         </blockquote>
                     </div>
                 }

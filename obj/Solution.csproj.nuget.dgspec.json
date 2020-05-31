@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Solution.csproj": {}
+    "C:\\Users\\Faridun\\Allif Academy\\Day 29\\Solution.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Solution.csproj": {
+    "C:\\Users\\Faridun\\Allif Academy\\Day 29\\Solution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Solution.csproj",
+        "projectUniqueName": "C:\\Users\\Faridun\\Allif Academy\\Day 29\\Solution.csproj",
         "projectName": "Solution",
-        "projectPath": "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\Solution.csproj",
+        "projectPath": "C:\\Users\\Faridun\\Allif Academy\\Day 29\\Solution.csproj",
         "packagesPath": "C:\\Users\\Faridun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Faridun\\Allif Academy\\Day 27\\Solution\\obj\\",
+        "outputPath": "C:\\Users\\Faridun\\Allif Academy\\Day 29\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Faridun\\AppData\\Roaming\\NuGet\\NuGet.Config"
