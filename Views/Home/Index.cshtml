@@ -1,0 +1,34 @@
+﻿@model DataContext
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать в Faha Shop!</h1>
+    <p>Берегите себя и останьтесь дома, подробнее о защите от коронавируса <a href="https://xn--80aesfpebagmfblc0a.xn--p1ai/">можете узнать здесь</a>.</p>
+</div>
+
+<div class="product-list">
+    <div class="card-columns">
+        @if(Model.Products != null)
+        {
+            @foreach (var item in Model.Products)
+            {
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name - @item.ProductCategory</h5>
+                            <p class="card-text">@item.Description</p>
+                        </div>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                <cite title="Source Title">Цена: @item.Cost</cite>
+                            </small>
+                        </footer>
+                        <a href="#" class="btn btn-primary">Купить</a>
+                    </blockquote>
+                </div>
+            }
+        }
+    </div>
+</div>

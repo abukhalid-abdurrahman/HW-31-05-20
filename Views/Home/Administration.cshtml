@@ -1,0 +1,65 @@
+@model DataContext
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Администрация</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <a class="navbar-brand" href="~/Home/Index">Faha Shop</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Administration">Добавления продукта</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/EditProduct">Изменения продукта</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/RemoveProduct">Удаление</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/ProductList">Список</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Category">Категории</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <div class="container">
+        <hr>
+            <form class="form-inline my-2 my-lg-0" method="POST">
+                <input class="form-control mr-sm-2" type="text" placeholder="Имя продукта" name="Name">
+                <input class="form-control mr-sm-2" type="text" placeholder="Описание продукта" name="Description">
+                <select class="form-control mr-sm-2" name="categoryId">
+                    <option selected disabled>Выберите категорию</option>
+                    @foreach(var item in Model.Categorys)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                    <span asp-validation-for="Categorys"></span>
+                </select>
+                <input class="form-control mr-sm-2" type="number" placeholder="Цена продукта" name="Cost">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить</button>
+            </form>
+        <hr>
+            <footer style="display: block;">
+                <p>© 2020 - Faha Shop Industries. All Rights Reserved</p>
+            </footer>
+    </div>
+</body>
+</html>
